@@ -1,0 +1,39 @@
+ 
+.confEntry {
+  background: var(--surface);
+  border: 1px solid var(--border-2);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 10px 12px;
+  margin-bottom: 10px;
+}
+.confHeader { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; font-weight: 600; font-size: 12px; font-family: var(--font-display); }
+
+
+.confNumero { display: inline-flex; align-items: center; gap: 5px; min-width: 0; }
+.confWhen { color: var(--muted); font-weight: 400; font-size: 10.5px; white-space: nowrap; }
+.confResumo { margin: 6px 0 8px; }
+.confResumo .badge-group { margin-left: 0; }
+.versaoLista { border-top: 1px dashed var(--border-2); margin: 2px 0 8px; padding-top: 6px; display: flex; flex-direction: column; gap: 4px; }
+.versaoRow { display: flex; align-items: center; gap: 8px; padding: 2px 0; font-size: 11px; flex-wrap: wrap; }
+.versaoNome { font-weight: 600; color: var(--accent); flex-shrink: 0; }
+.versaoQuando { color: var(--muted); flex: 1; }
+.versaoBtn {
+  color: var(--accent);
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border: 1px solid rgba(var(--accent-rgb), .3);
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.versaoBtn:hover { background: var(--accent-tint); }
+.versaoBtn:disabled { color: var(--muted-2); border-color: var(--border); cursor: not-allowed; }
+
+ 
+@media (max-width: 480px) {
+  .trilho-card { padding: 16px 14px 14px; border-radius: 14px; }
+  .trilho-field-label { font-size: 15px; }
+  .trilho-actions { justify-content: center; }
+  .trilho-btn-next { margin-left: 0; width: 100%; text-align: center; }
+}

@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pulso — primeiros ajustes</title>
+<link rel="stylesheet" href="onboarding.css" />
+</head>
+<body>
+
+<div class="onb">
+
+  <header class="onb-head">
+    <div class="onb-logo"><img src="../../assets/icons/icon-128.png" alt="" /></div>
+    <div class="onb-marca">
+      Pulso
+      <small>Conferência de migração SAJ → SEEU</small>
+    </div>
+    <div class="stepper" aria-hidden="true">
+      <div class="step-dot on" id="dot1"></div>
+      <div class="step-dot" id="dot2"></div>
+    </div>
+  </header>
+
+  
+  <section class="card" id="passo1">
+    <span class="eyebrow">Primeiros ajustes · 1 de 2</span>
+    <h1>Como deseja ver a extensão?</h1>
+    <p class="sub">Os dois modos fazem exatamente a mesma coisa — muda só onde a tela do Pulso aparece.
+      Dá pra trocar quando quiser, nas opções (⚙).</p>
+
+    <div class="escolhas">
+
+      <label class="escolha">
+        <input type="radio" name="modo" value="aba" />
+        <div class="mock mock-aba">
+          <div class="mock-bar">
+            <div class="mock-dots"><i></i><i></i><i></i></div>
+            <div class="mock-tab tab-seeu"><i></i>SEEU</div>
+            <div class="mock-tab tab-pulso"><i></i>Pulso</div>
+          </div>
+          <div class="mock-corpo">
+            <div class="mock-seeu">
+              <div class="l t"></div><div class="l s"></div><div class="l"></div>
+              <div class="l m"></div><div class="box"></div>
+            </div>
+            <div class="mock-pulso">
+              <div class="head"></div><div class="chip"></div>
+              <div class="card-m"></div><div class="card-m"></div><div class="card-m"></div>
+            </div>
+          </div>
+        </div>
+        <div class="escolha-topo">
+          <span class="radio-fake" aria-hidden="true"></span>
+          <span class="escolha-titulo">Em aba própria</span>
+        </div>
+        <p class="escolha-txt">O Pulso ocupa uma aba dedicada do navegador, com a tela inteira só pra ele.
+          Você alterna entre a aba do SEEU e a do Pulso como faria com dois sites.</p>
+        <span class="escolha-tag">Mais espaço · melhor em tela pequena</span>
+      </label>
+
+      <label class="escolha">
+        <input type="radio" name="modo" value="sidepanel" />
+        <div class="mock mock-painel">
+          <div class="mock-bar">
+            <div class="mock-dots"><i></i><i></i><i></i></div>
+            <div class="mock-tab tab-seeu"><i></i>SEEU</div>
+            <div class="puxador"></div>
+          </div>
+          <div class="mock-corpo">
+            <div class="mock-seeu">
+              <div class="l t"></div><div class="l s"></div><div class="l"></div>
+              <div class="l m"></div><div class="box"></div>
+            </div>
+            <div class="mock-pulso">
+              <div class="head"></div><div class="chip"></div>
+              <div class="card-m"></div><div class="card-m"></div><div class="card-m"></div>
+            </div>
+          </div>
+        </div>
+        <div class="escolha-topo">
+          <span class="radio-fake" aria-hidden="true"></span>
+          <span class="escolha-titulo">Num painel lateral</span>
+        </div>
+        <p class="escolha-txt">A tela fica dividida: o SEEU continua aberto de um lado e o Pulso ocupa uma
+          faixa grudada na lateral direita, sempre visível. Nada de trocar de aba.</p>
+        <span class="escolha-tag">Vê os dois ao mesmo tempo</span>
+      </label>
+
+    </div>
+
+    <div class="acoes">
+      <span class="aviso-rodape" id="dica1">Escolha um dos dois para continuar.</span>
+      <button type="button" class="btn-primario" id="btnContinuar" disabled>Continuar</button>
+    </div>
+  </section>
+
+  
+  <section class="card" id="passo2" hidden>
+    <span class="eyebrow">Primeiros ajustes · 2 de 2</span>
+    <h1>Já está tudo no padrão</h1>
+    <p class="sub">Se não quiser mexer em nada, é só concluir. Tudo isto continua disponível
+      depois, na engrenagem (⚙) do canto superior direito.</p>
+
+    <div class="resumo-escolha">
+      <span>Exibir o Pulso <b id="resumoModo">—</b></span>
+      <button type="button" class="link-btn" id="btnTrocarModo">alterar</button>
+    </div>
+
+    <div class="opt-lista">
+
+      <div class="opt">
+        <div class="opt-info">
+          <div class="opt-nome">Últimas conferências na tela inicial</div>
+          <div class="opt-desc">Quantos processos já conferidos aparecem de cara quando você entra no Pulso sem nada carregado.</div>
+        </div>
+        <div class="opt-ctrl">
+          <select id="optUltimas">
+            <option value="1">1</option>
+            <option value="3">3</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="opt">
+        <div class="opt-info">
+          <div class="opt-nome">Links rápidos ao lado do processo</div>
+          <div class="opt-desc">Passando o mouse sobre um número de processo, aparece um balãozinho com atalhos para abri-lo em outros sistemas.</div>
+        </div>
+        <div class="opt-ctrl">
+          <label class="switch"><input type="checkbox" id="optLinks" /><span></span></label>
+        </div>
+      </div>
+
+      <div class="opt-sub" id="subLinks">
+        <div class="chips" id="chips"></div>
+        <div class="nota">Marque só os sistemas que você usa — cada ambiente do SEEU é um destino próprio.</div>
+      </div>
+
+      <div class="opt">
+        <div class="opt-info">
+          <div class="opt-nome">Funcionalidades experimentais</div>
+          <div class="opt-desc">Recursos ainda em teste para sincronizar Partes e Processos Criminais com o SEEU. Ficam escondidos até você ligar, e cada sincronização ainda precisa ser habilitada uma a uma nas opções do painel.</div>
+        </div>
+        <div class="opt-ctrl">
+          <label class="switch"><input type="checkbox" id="optExperimentais" /><span></span></label>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="acoes">
+      <button type="button" class="btn-secundario" id="btnVoltar">← Voltar</button>
+      <button type="button" class="btn-primario" id="btnConcluir">Começar a usar</button>
+    </div>
+  </section>
+
+  
+  <section class="card" id="pronto" hidden>
+    <div class="pronto-icone">✓</div>
+    <h1>Tudo pronto</h1>
+    <p class="sub">Dá pra mudar tudo isto depois, na engrenagem (⚙) do canto superior direito.</p>
+
+    <div class="acoes">
+      <button type="button" class="btn-primario" id="btnAbrir">Ir para o Pulso</button>
+    </div>
+  </section>
+
+</div>
+
+<script src="../core/prefs.js"></script>
+<script src="onboarding.js"></script>
+</body>
+</html>

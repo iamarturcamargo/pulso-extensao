@@ -1,0 +1,130 @@
+
+
+
+#sidebar {
+  position: fixed;
+  top: var(--appbar-h);
+  left: 0;
+  width: var(--sidebar-width);
+  height: calc(100vh - var(--appbar-h));
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 8px 16px;
+  box-shadow: 2px 0 12px rgba(0,0,0,.04);
+  transition: width .18s ease;
+}
+#sidebar.collapsed {
+  width: var(--sidebar-collapsed-width);
+  padding: 8px 4px 16px;
+  overflow: hidden;
+}
+#sidebar.collapsed .sidebar-bloco { display: none; }
+.sidebar-toggle {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--surface);
+  padding: 2px 0 6px;
+  display: flex;
+  justify-content: flex-end;
+}
+.sidebar-toggle button {
+  width: 24px; height: 24px;
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+}
+.sidebar-toggle button:hover { background: var(--accent-tint); color: var(--accent); }
+#sidebar.collapsed .sidebar-toggle { justify-content: center; }
+
+
+
+.sidebar-bloco + .sidebar-bloco {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-2);
+}
+.sidebar-bloco-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  padding: 4px 4px;
+  border-radius: 6px;
+  text-align: left;
+}
+.sidebar-bloco-head:hover { background: var(--accent-tint); }
+.sidebar-chev {
+  flex: 0 0 auto;
+  font-size: 10px;
+  color: var(--muted);
+  transition: transform .15s ease;
+}
+.sidebar-bloco-head[aria-expanded="false"] .sidebar-chev { transform: rotate(-90deg); }
+
+.sidebar-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--text);
+}
+.sidebar-stats { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+.stat-badge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.stat-badge.alterado { color: var(--alterado); background: var(--alterado-tint); }
+.stat-badge.excluido { color: var(--excluido); background: var(--excluido-tint); }
+.stat-badge.incluido { color: var(--incluido); background: var(--incluido-tint); }
+.stat-badge.revisado { color: var(--revisado); background: var(--revisado-tint); }
+
+
+
+
+.sidebar-bloco-nav { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+.sidebar-nav { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 4px; }
+.nav-secao { border-radius: var(--radius-xs); padding: 2px 4px; }
+.secao-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 6px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 11px;
+  color: var(--text);
+  cursor: pointer;
+}
+.nav-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.secao-link:hover { background: var(--accent-tint); }
+.badge-group { display: flex; gap: 2px; margin-left: auto; font-weight: 700; }
+.badge-sm { font-size: 9.5px; padding: 0 5px; border-radius: 999px; line-height: 15px; }
+.badge-xs { font-size: 8.5px; padding: 0 4px; border-radius: 999px; line-height: 13px; }
+.badge-sm.alterado, .badge-xs.alterado { color: var(--alterado); background: var(--alterado-tint); }
+.badge-sm.excluido, .badge-xs.excluido { color: var(--excluido); background: var(--excluido-tint); }
+.badge-sm.incluido, .badge-xs.incluido { color: var(--incluido); background: var(--incluido-tint); }
+.badge-sm.revisado, .badge-xs.revisado { color: var(--revisado); background: var(--revisado-tint); }
+.badge-sm.semDivergencia { color: var(--muted); background: var(--border-2); }
+
+.nav-itens { padding-left: 14px; display: flex; flex-direction: column; gap: 1px; margin-top: 1px; }
+.nav-item {
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 10.5px;
+  color: var(--muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.nav-item:hover { background: var(--accent-tint); color: var(--accent); }

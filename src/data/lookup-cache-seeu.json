@@ -1,0 +1,111 @@
+{
+  "leisAtalho": {
+    "CP": {
+      "codigoLei": "1",
+      "descrLei": "Código Penal"
+    },
+    "LCP": {
+      "codigoLei": "6",
+      "descrLei": "Lei de Contravenções Penais"
+    },
+    "Drogas": {
+      "codigoLei": "5",
+      "descrLei": "Lei de Drogas (11.343/06)"
+    },
+    "Armas": {
+      "codigoLei": "7",
+      "descrLei": "Estatuto do Desarmamento (10.826/03)"
+    },
+    "CTB": {
+      "codigoLei": "10",
+      "descrLei": "Código de Trânsito Brasileiro"
+    },
+    "ECA": {
+      "codigoLei": "14",
+      "descrLei": "Estatuto da Criança e do Adolescente"
+    }
+  },
+  "leisPorId": {},
+  "artigosPorLei": {},
+  "tipificacoesPorArtigo": {},
+  "fracoesProgressaoRegime": [
+    {
+      "value": "0",
+      "label": "1/8 - Mulher Gestante - LEP Art. 112 §3"
+    },
+    {
+      "value": "1",
+      "label": "1/6 - Comum"
+    },
+    {
+      "value": "2",
+      "label": "1/6 - Crime Hediondo até 28/03/2007"
+    },
+    {
+      "value": "3",
+      "label": "2/5 - Hediondo Primario"
+    },
+    {
+      "value": "4",
+      "label": "3/5 - Hediondo Reincidente"
+    },
+    {
+      "value": "5",
+      "label": "16% - Art.112, I, da LEP"
+    },
+    {
+      "value": "6",
+      "label": "20% - Art.112, II, da LEP"
+    },
+    {
+      "value": "7",
+      "label": "25% - Art.112, III, da LEP"
+    },
+    {
+      "value": "8",
+      "label": "30% - Art.112, IV, da LEP"
+    },
+    {
+      "value": "9",
+      "label": "40% - Art.112, V, da LEP"
+    },
+    {
+      "value": "10",
+      "label": "50% - Art.112, VI, da LEP"
+    },
+    {
+      "value": "13",
+      "label": "55% - Art.112, VI-A, da LEP"
+    },
+    {
+      "value": "11",
+      "label": "60% - Art.112, VII, da LEP"
+    },
+    {
+      "value": "12",
+      "label": "70% - Art.112, VIII, da LEP"
+    }
+  ],
+  "fracoesLivramentoCondicional": [
+    {
+      "value": "1",
+      "label": "1/3 - Comum Primário"
+    },
+    {
+      "value": "2",
+      "label": "1/3 - Crime Hediondo até 24/07/1990"
+    },
+    {
+      "value": "3",
+      "label": "1/2 - Comum Reincidente"
+    },
+    {
+      "value": "4",
+      "label": "2/3 - Hediondo"
+    },
+    {
+      "value": "5",
+      "label": "1/1 - Hediondo Reincidente/Reincidente Específico"
+    }
+  ]
+}

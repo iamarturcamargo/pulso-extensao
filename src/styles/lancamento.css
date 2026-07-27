@@ -1,0 +1,226 @@
+
+
+
+
+.lanc-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+  position: static;
+  background: transparent;
+  padding: 10px 0;
+}
+.lanc-voltar {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--muted);
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+}
+.lanc-voltar:hover { color: var(--accent); border-color: var(--accent); }
+.lanc-titulo { font-family: var(--font-display); font-weight: 600; font-size: 15px; flex: 1; min-width: 0; }
+.lanc-btn-sync, .lanc-btn-export {
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  color: #fff;
+  background: var(--accent);
+  white-space: nowrap;
+}
+.lanc-btn-sync:hover, .lanc-btn-export:hover { opacity: .9; }
+.lanc-btn-sync:disabled { opacity: .5; cursor: default; }
+.lanc-btn-sync-secao { flex: 0 0 auto; padding: 6px 12px; }
+.lanc-btn-export { color: var(--accent); background: var(--accent-tint); border-color: rgba(var(--accent-rgb), .3); }
+.lanc-aviso-sync-lote {
+  margin: -4px 0 12px;
+  padding: 8px 10px;
+  border-radius: var(--radius-xs);
+  color: var(--accent);
+  background: var(--accent-tint);
+  font-size: 11px;
+}
+.lanc-sync-lote-concluido .lanc-card,
+.lanc-sync-lote-concluido .lanc-grid { opacity: .72; }
+
+.lanc-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 12px 14px;
+  margin-bottom: 10px;
+}
+.lanc-card-pena { border-left: 3px solid var(--accent); }
+.lanc-card-crime { border-left: 3px solid var(--incluido); background: var(--surface-2); }
+.lanc-card.lanc-removido { opacity: .55; border-left-color: var(--excluido); }
+
+.lanc-card-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+.lanc-card-titulo {
+  flex: 1 1 auto;
+  min-width: 0;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.3;
+  word-break: break-word;
+}
+.lanc-card-titulo-pena { font-size: 13.5px; }
+.lanc-card-titulo-crime { font-size: 12.5px; }
+.lanc-card-acoes { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 6px; }
+.lanc-card.is-collapsed > .lanc-card-body { display: none; }
+.lanc-card.is-collapsed > .lanc-card-head { margin-bottom: 0; }
+.lanc-card.is-collapsed > .lanc-card-head .chevron-btn { transform: rotate(-90deg); }
+.lanc-card-head .lanc-card-titulo { cursor: pointer; }
+.lanc-cascata-btn { letter-spacing: .02em; }
+.lanc-mini-btn {
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 4px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  background: var(--surface);
+  white-space: nowrap;
+}
+.lanc-mini-btn:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-tint); }
+.lanc-mini-btn-danger:hover { color: var(--excluido); border-color: rgba(var(--excluido-rgb), .4); background: var(--excluido-tint); }
+
+.lanc-aviso-removido { color: var(--excluido); font-size: 11px; background: var(--excluido-tint); border-radius: var(--radius-xs); padding: 5px 8px; margin: 0 0 8px; }
+
+.lanc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 10px; }
+
+
+.lanc-grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; }
+.lanc-campo { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.lanc-campo-full { grid-column: 1 / -1; }
+.lanc-campo-togl { min-width: 0; border-radius: var(--radius-xs); }
+.lanc-campo-togl-control { display: flex; align-items: center; gap: 6px; min-width: 0; }
+.lanc-campo-togl-control > :first-child { flex: 1 1 auto; min-width: 0; }
+
+
+
+
+
+
+.lanc-campo-togl.is-visto {
+  background: var(--revisado-tint);
+  box-shadow: inset 3px 0 0 var(--revisado);
+  opacity: .85;
+}
+.lanc-campo-togl[data-state="alterado"] { background: var(--alterado-tint); }
+.lanc-campo-togl[data-state="incluido"] { background: var(--incluido-tint); }
+
+
+
+.lanc-campo-togl[data-state="excluido"] { background: var(--excluido-tint); box-shadow: inset 3px 0 0 var(--excluido); }
+.lanc-campo-togl[data-state="excluido"] .lanc-campo-label { color: var(--excluido); text-decoration: line-through; }
+.lanc-campo-togl[data-state="excluido"] .lanc-input,
+.lanc-campo-togl[data-state="excluido"] .lanc-select { text-decoration: line-through; opacity: .8; }
+.lanc-campo-togl .migrado-line { padding: 3px 2px 0; }
+.lanc-obrig { color: var(--excluido); font-weight: 700; }
+
+
+.lanc-campo.lanc-obrig-vazio,
+.lanc-campo-togl.lanc-obrig-vazio {
+  background: rgba(var(--excluido-rgb), .06);
+  box-shadow: inset 2px 0 0 rgba(var(--excluido-rgb), .55);
+  border-radius: var(--radius-xs);
+}
+
+
+.lanc-obrig-vazio .lanc-input,
+.lanc-obrig-vazio .lanc-select,
+.lanc-obrig-vazio .cbx-input {
+  border-color: rgba(var(--excluido-rgb), .55);
+}
+ 
+.lanc-subsecao { display: flex; flex-direction: column; gap: 10px; }
+.lanc-subsecao-sep { border-top: 1px dashed var(--border-2); margin: 12px 0 2px; }
+.lanc-campo-label { font-size: 10px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted-2); font-weight: 700; }
+.lanc-campo-msg { font-size: 10.5px; }
+.lanc-campo-msg-ok { color: var(--incluido); }
+.lanc-campo-msg-erro { color: var(--excluido); }
+
+
+.lanc-tempo-aviso:empty { display: none; }
+.lanc-tempo-aviso.lanc-tempo-incoerente { color: var(--excluido); font-weight: 600; }
+.lanc-tempo.lanc-tempo-incoerente .lanc-input-numero {
+  border-color: rgba(var(--excluido-rgb), .55);
+  background: var(--excluido-tint);
+}
+
+.lanc-input, .lanc-select {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xs);
+  padding: 7px 9px;
+  font-size: 12px;
+  background: var(--surface);
+  color: var(--text);
+  width: 100%;
+}
+.lanc-input:focus, .lanc-select:focus { border-color: var(--accent); }
+
+
+
+
+
+
+
+.lanc-input-numero {
+  flex: 1 1 46px;
+  width: 46px;
+  min-width: 38px;
+  max-width: 56px;
+  padding-left: 4px;
+  padding-right: 4px;
+  text-align: center;
+}
+
+
+
+.lanc-input-numero { appearance: textfield; -moz-appearance: textfield; }
+.lanc-input-numero::-webkit-outer-spin-button,
+.lanc-input-numero::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.lanc-textarea { resize: vertical; min-height: 38px; font-family: inherit; line-height: 1.35; }
+.lanc-input-ano { width: 96px; }
+ 
+.lanc-recurso { margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--border); }
+ 
+.lanc-card-pena.lanc-pena-ativa { background: rgba(56, 161, 105, .08); box-shadow: inset 3px 0 0 #38a169; }
+.lanc-pena-ativa-badge { font-size: 10px; font-weight: 800; letter-spacing: .03em; color: #38a169; margin-left: 8px; cursor: help; }
+ 
+.lanc-derivado { background: var(--surface-2, rgba(127,127,127,.08)); color: var(--muted, var(--text)); cursor: default; display: flex; align-items: center; }
+
+
+
+
+.lanc-tempo { display: flex; align-items: center; gap: 4px; flex-wrap: nowrap; min-width: 0; }
+.lanc-tempo-sep { color: var(--muted-2); font-size: 11px; }
+.lanc-row { display: flex; gap: 6px; align-items: center; }
+.lanc-row .lanc-select { flex: 1 1 auto; }
+.lanc-row .lanc-input { flex: 1 1 auto; }
+.lanc-row .cbx { flex: 1 1 auto; min-width: 0; }
+
+.lanc-atalhos { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 4px; }
+.lanc-atalho-btn {
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  background: var(--surface);
+}
+.lanc-atalho-btn:hover { border-color: var(--accent); color: var(--accent); }
+.lanc-atalho-btn.active { color: #fff; background: var(--accent); border-color: var(--accent); }
+
+.lanc-tip-lista { display: flex; flex-direction: column; gap: 4px; margin-bottom: 6px; }
+.lanc-radio-opt { display: flex; align-items: flex-start; gap: 6px; font-size: 11.5px; padding: 4px 6px; border-radius: var(--radius-xs); }
+.lanc-radio-opt:hover { background: var(--accent-tint); }
+.lanc-radio-opt input { margin-top: 2px; }
