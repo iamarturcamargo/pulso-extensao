@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <title>Pulso</title>
+  
+
+  <link rel="stylesheet" href="../styles/base.css" />
+  <link rel="stylesheet" href="../styles/sidebar.css" />
+  <link rel="stylesheet" href="../styles/topbar.css" />
+  <link rel="stylesheet" href="../styles/relatorio.css" />
+  <link rel="stylesheet" href="../styles/pecas.css" />
+  <link rel="stylesheet" href="../styles/registro.css" />
+  <link rel="stylesheet" href="../styles/overlays.css" />
+  <link rel="stylesheet" href="../styles/conferidos.css" />
+  <link rel="stylesheet" href="../styles/inicial.css" />
+  <link rel="stylesheet" href="../styles/links-processo.css" />
+  <link rel="stylesheet" href="../styles/lancamento.css" />
+  <link rel="stylesheet" href="../styles/combobox.css" />
+  <link rel="stylesheet" href="../styles/parte-passiva.css" />
+  <link rel="stylesheet" href="../styles/conexao.css" />
+  <link rel="stylesheet" href="../styles/erros.css" />
+  <link rel="stylesheet" href="../styles/guias.css" />
+</head>
+<body>
+
+  
+
+  <header class="appbar" id="appbar">
+    <nav class="tabs">
+      <button type="button" id="tabRelatorio" class="tabBtn active">Relatório</button>
+      <button type="button" id="tabConferidos" class="tabBtn" data-global-action="true">Painel de Conferidos</button>
+      <button type="button" id="tabErros" class="tabBtn" data-global-action="true">Erros</button>
+      <button type="button" id="tabGuias" class="tabBtn" data-global-action="true">Guias</button>
+    </nav>
+
+    
+
+
+
+
+    <div class="conexao" id="conexao">
+      <button type="button" class="conexao-btn" id="conexaoBtn" data-global-action="true"
+              aria-expanded="false" aria-haspopup="true"
+              title="Conexão com o SEEU — clique para verificar agora ou trocar de ambiente">
+        <span class="conexao-bolinha" id="conexaoBolinha" aria-hidden="true"></span>
+        <span class="conexao-texto" id="conexaoTexto">Verificando conexão…</span>
+      </button>
+      <div class="conexao-menu" id="conexaoMenu" hidden></div>
+    </div>
+    
+
+
+    <span class="appbar-status" id="status"></span>
+    <div class="opcoes-wrap">
+      <button type="button" class="btn-opcoes" id="btnOpcoes" data-global-action="true"
+              title="Opções" aria-label="Opções" aria-expanded="false">⚙</button>
+      
+
+
+
+
+      <div class="opcoes-menu" id="opcoesMenu" hidden>
+        <div class="opcoes-grupo">
+          <span class="opcoes-titulo">Onde o Pulso aparece</span>
+          <label class="opcoes-linha">
+            <span>Ao clicar no ícone</span>
+            <select id="optModo">
+              <option value="sidepanel">Painel lateral</option>
+              <option value="aba">Aba própria</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="opcoes-grupo">
+          <span class="opcoes-titulo">Tela inicial</span>
+          <label class="opcoes-linha">
+            <span>Últimas conferências</span>
+            <select id="optUltimas">
+              <option value="1">1</option>
+              <option value="3">3</option>
+              <option value="5">5</option>
+              <option value="10">10</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="opcoes-grupo">
+          <label class="opcoes-check">
+            <input type="checkbox" id="optLinksRapidos" />
+            <span>Links rápidos ao lado do processo</span>
+          </label>
+          
+
+          <div class="opcoes-sub" id="opcoesLinksSub" hidden>
+            <div class="opcoes-chips" id="opcoesLinksChips"></div>
+          </div>
+        </div>
+
+        <div class="opcoes-grupo">
+          <label class="opcoes-check">
+            <input type="checkbox" id="optExperimentais" />
+            <span>Mostrar funcionalidades experimentais</span>
+          </label>
+          <div class="opcoes-sub" id="opcoesExperimentaisSub" hidden>
+            
+
+
+
+            <label class="opcoes-check">
+              <input type="checkbox" id="optExperimentalPartes" />
+              <span>Sincronizar Partes com o SEEU</span>
+            </label>
+            <label class="opcoes-check">
+              <input type="checkbox" id="optExperimentalCriminais" />
+              <span>Sincronizar Processos Criminais com o SEEU</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  
+
+
+
+
+
+
+
+  <aside id="sidebar">
+    <div class="sidebar-toggle">
+      <button type="button" id="sidebarToggleBtn" title="Recolher painel">◀</button>
+    </div>
+
+    <section class="sidebar-bloco" id="blocoResumo">
+      <button type="button" class="sidebar-bloco-head" id="blocoResumoHead" aria-expanded="true">
+        <span class="sidebar-chev" aria-hidden="true">▾</span>
+        <span class="sidebar-title">Resumo das alterações</span>
+      </button>
+      <div class="sidebar-bloco-body" id="blocoResumoBody">
+        <div class="sidebar-stats">
+          <span class="stat-badge alterado" id="sideAlterado">0 alterados</span>
+          <span class="stat-badge excluido" id="sideExcluido">0 excluídos</span>
+          <span class="stat-badge incluido" id="sideIncluido">0 incluídos</span>
+          <span class="stat-badge revisado" id="sideRevisado">0 vistos</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="sidebar-bloco sidebar-bloco-nav" id="blocoNav">
+      <button type="button" class="sidebar-bloco-head" id="blocoNavHead" aria-expanded="true">
+        <span class="sidebar-chev" aria-hidden="true">▾</span>
+        <span class="sidebar-title">Navegação</span>
+      </button>
+      <nav class="sidebar-nav sidebar-bloco-body" id="sidebarNav"></nav>
+    </section>
+  </aside>
+
+  <div class="main-wrapper" id="mainWrapper">
+    
+
+
+    <header class="topbar" id="topbar">
+      <div class="topbar-processo" id="topbarRow1">
+        <div class="processo-id">
+          <span class="eyebrow">Conferência de migração SAJ → SEEU</span>
+          
+
+          <span class="numero-linha" id="numeroLinha">
+            <span class="numero-processo" id="numeroProcesso">—</span>
+          </span>
+        </div>
+        
+
+
+
+
+
+        <div class="topbar-processo-acoes">
+          <button type="button" class="btn-ghost btn-conferir-outro" id="btnConferirOutro"
+                  aria-expanded="false">+ Conferir outro processo</button>
+          <button type="button" class="btn-ghost btn-pecas-toggle" id="btnMostrarPecas"
+                  aria-expanded="false">Mostrar peças</button>
+        </div>
+      </div>
+
+      
+
+
+      <div class="topbar-entrada" id="topbarEntrada">
+        <button type="button" id="btnConferir">Conferir processo aberto</button>
+        <span class="actions-sep">ou puxe por número:</span>
+        <input type="text" id="inputNumeroPuxar" class="input-numero"
+               placeholder="0000000-00.0000.0.00.0000" autocomplete="off"
+               spellcheck="false" maxlength="25" />
+        <button type="button" id="btnPuxar">Puxar</button>
+        
+
+
+
+        <div class="entrada-recentes" id="entradaRecentes"></div>
+      </div>
+    </header>
+
+    <main id="appMain">
+      <section id="viewRelatorio">
+        <div id="avisoJaConferido" class="aviso" hidden></div>
+        
+
+
+        <div id="avisoEscopo" class="aviso" hidden></div>
+        <div id="avisoGuiaPendente" class="aviso" hidden></div>
+
+        
+
+
+
+        <div id="telaInicial" hidden>
+          <div class="inicial-painel">
+            <div class="inicial-cabecalho" id="telaInicialCabecalho" hidden>
+              <span class="eyebrow">Últimas conferências</span>
+              <span class="inicial-contador" id="telaInicialContador"></span>
+            </div>
+
+            <div id="telaInicialLista"></div>
+
+            <div class="inicial-vazio" id="telaInicialVazio" hidden>
+              <div class="inicial-vazio-icone" aria-hidden="true">◷</div>
+              <div class="inicial-vazio-titulo">Nenhuma conferência ainda</div>
+              <p class="inicial-vazio-txt">Abra um processo no SEEU e use
+                <b>Conferir processo aberto</b>, aí em cima — ou digite o número
+                e clique em <b>Puxar</b>, sem sair de onde você está.
+                As conferências ficam guardadas aqui.</p>
+            </div>
+          </div>
+
+          <div class="inicial-rodape" id="telaInicialRodape" hidden>
+            <button type="button" class="btn-painel-conferidos" id="btnIrConferidos">Painel de Conferidos</button>
+          </div>
+        </div>
+
+        <div class="split" id="splitRelatorio">
+          <div class="split-pane" id="paneMetadados">
+            
+
+
+
+
+
+            <div class="conteudo-tabs" id="conteudoTabs" hidden>
+              <span class="conteudo-tab active" id="tabMetadados">Metadados</span>
+
+              <div class="conteudo-acoes">
+                <div class="progress-wrap">
+                  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+                  <span class="progress-label" id="progressLabel">0 / 0 vistos</span>
+                </div>
+                <button type="button" class="btn-ghost" id="btnExpandAll">⤢ Expandir tudo</button>
+                <button type="button" class="btn-trilho" id="btnTrilho">▶ Conferir em sequência</button>
+                <button type="button" class="btn-trilho btn-trilho-alt" id="btnTrilhoGrupo">⏩ Por grupo</button>
+                <span class="versao-chip" id="versaoChip">—</span>
+                <button type="button" class="btn-undo" id="btnUndo" data-global-action="true" disabled>↺ Desfazer</button>
+                <button type="button" class="btn-salvar" id="btnSalvar" data-global-action="true" disabled hidden>Salvar Versão</button>
+              </div>
+            </div>
+
+            <div id="reportRoot"></div>
+          </div>
+          <div class="split-handle" id="splitHandle" role="separator"
+               aria-orientation="vertical" tabindex="0"
+               title="Arraste para redimensionar" hidden></div>
+          <div class="split-pane split-pane-pecas" id="panePecas" hidden></div>
+        </div>
+      </section>
+
+      <section id="viewConferidos" hidden>
+        <div class="actions">
+          <button type="button" id="btnBaixarCsv">Baixar relatório (Excel)</button>
+          <button type="button" id="btnBaixarTudo">Baixar todos os dados</button>
+          <button type="button" id="btnLimparRelatorio" class="dangerBtn">Limpar relatório</button>
+        </div>
+        <div id="conferidosRoot"></div>
+      </section>
+
+      
+
+
+
+
+
+      <section id="viewErros" hidden>
+        <div class="actions">
+          <button type="button" id="btnBaixarErros">Baixar erros (JSON)</button>
+          <button type="button" id="btnLimparErros" class="dangerBtn">Limpar erros</button>
+        </div>
+        <div id="errosRoot"></div>
+      </section>
+
+      
+
+
+
+
+      <section id="viewGuias" hidden>
+        <div id="guiasRoot"></div>
+      </section>
+
+    </main>
+  </div>
+
+  
+
+
+
+
+  <div class="aviso-overlay hidden" id="avisoOverlay">
+    <div class="aviso-scrim" id="avisoScrim"></div>
+    <div class="aviso-card" role="alertdialog" aria-modal="true" aria-labelledby="avisoTitulo" aria-describedby="avisoCorpo">
+      <div class="aviso-titulo" id="avisoTitulo">—</div>
+      <div class="aviso-corpo" id="avisoCorpo"></div>
+      <div class="aviso-actions">
+        <button type="button" class="aviso-btn" id="avisoCancelBtn" hidden>Cancelar</button>
+        <button type="button" class="aviso-btn aviso-btn-ok" id="avisoOkBtn">Entendi</button>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="trilho-overlay hidden" id="trilhoOverlay">
+    <div class="trilho-scrim" id="trilhoScrim"></div>
+    <div class="trilho-card" role="dialog" aria-modal="true" aria-label="Conferência em sequência">
+      <div class="trilho-top">
+        <div class="trilho-breadcrumb" id="trilhoBreadcrumb">—</div>
+        <div class="trilho-counter" id="trilhoCounter">0 / 0</div>
+      </div>
+      <div class="trilho-progress-track"><div class="trilho-progress-fill" id="trilhoProgressFill"></div></div>
+      <div class="trilho-body" id="trilhoBody">
+        
+        <div id="trilhoCampoView">
+          <div class="trilho-field-label" id="trilhoFieldLabel">—</div>
+          <div class="trilho-compare">
+            <div class="trilho-original">
+              <span class="trilho-mini-label">Migrado</span>
+              <div class="trilho-original-value" id="trilhoOriginalValue">—</div>
+            </div>
+            <div class="trilho-arrow" aria-hidden="true">→</div>
+            <div class="trilho-input-wrap">
+              <span class="trilho-mini-label">Valor atual</span>
+              <input type="text" id="trilhoInput" class="trilho-input" autocomplete="off" spellcheck="false">
+            </div>
+          </div>
+          <span class="trilho-state-chip" id="trilhoStateChip" data-state="igual">Igual ao migrado</span>
+        </div>
+        
+
+        <div id="trilhoGrupoView" hidden>
+          <div class="trilho-grupo-titulo" id="trilhoGrupoTitulo">—</div>
+          <div class="trilho-grupo-lista" id="trilhoGrupoLista"></div>
+        </div>
+      </div>
+      <div class="trilho-actions">
+        <button type="button" class="trilho-btn" id="trilhoBackBtn">← Voltar</button>
+        <button type="button" class="trilho-btn trilho-btn-restore" id="trilhoRestoreBtn">↩ Restaurar</button>
+        <button type="button" class="trilho-btn" id="trilhoExitBtn">Sair (Esc)</button>
+        <button type="button" class="trilho-btn trilho-btn-next" id="trilhoNextBtn">Confirmar e avançar (Enter) →</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" hidden></div>
+
+  
+
+
+  <script src="../core/prefs.js"></script>
+  
+
+
+  <script src="../core/seeuSessao.js"></script>
+  
+
+
+  <script src="../core/erros.js"></script>
+  
+
+
+  <script src="../core/seeuConexao.js"></script>
+  
+
+  <script src="../scrape/processosCriminais.js"></script>
+  
+
+  <script src="../scrape/scrapeSeeu.js"></script>
+  
+
+
+
+
+  <script src="../data/lookup-seed.js"></script>
+  <script src="../editors/combobox.js"></script>
+  <script src="../editors/lancamento.js"></script>
+  <script src="../editors/partePassiva.js"></script>
+  <script src="../../vendor/pdf-lib.min.js"></script>
+  
+
+  <script src="../pecas/pecasScrape.js"></script>
+  <script src="../pecas/pecas.js"></script>
+  
+
+
+
+  <script src="dom.js"></script>
+  
+
+
+  <script src="aviso.js"></script>
+  <script src="opcoes.js"></script>
+  
+
+
+  <script src="conexao.js"></script>
+  <script src="layout.js"></script>
+  <script src="../model/review.js"></script>
+  
+
+
+
+  <script src="../model/guias.js"></script>
+  <script src="formulario.js"></script>
+  <script src="linksProcesso.js"></script>
+  <script src="sidebar.js"></script>
+  <script src="trilho.js"></script>
+  <script src="../export/csv.js"></script>
+  
+
+  <script src="conferidos.js"></script>
+  <script src="inicial.js"></script>
+  
+
+
+
+
+  <script src="painelGuias.js"></script>
+  <script src="sidepanel.js"></script>
+</body>
+</html>

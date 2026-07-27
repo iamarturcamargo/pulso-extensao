@@ -1,0 +1,56 @@
+ 
+.partes-editor { display: flex; flex-direction: column; gap: 10px; }
+.partes-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 11px 12px;
+}
+.partes-card-titulo { margin: 0 0 9px; font-family: var(--font-display); font-size: 13px; }
+.partes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 8px 10px; }
+.partes-campo { min-width: 0; padding: 5px 6px; border-radius: var(--radius-xs); }
+.partes-campo.partes-campo-alterado { background: var(--alterado-tint); }
+.partes-campo.partes-campo-excluido { background: var(--excluido-tint); }
+.partes-campo.partes-campo-excluido .partes-campo-label { color: var(--excluido); text-decoration: line-through; }
+.partes-campo.revisado { border-left: 3px solid var(--revisado); }
+.partes-campo-label { display: block; margin-bottom: 4px; font-size: 10px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted-2); font-weight: 700; }
+.partes-obrig { color: var(--excluido); }
+.partes-campo-control { display: flex; align-items: center; gap: 6px; min-width: 0; }
+.partes-campo-control > :first-child { flex: 1 1 auto; min-width: 0; }
+.partes-campo-excluido .partes-campo-control > :first-child { opacity: .65; }
+.partes-restaurar {
+  flex: 0 0 auto;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.partes-restaurar:hover { text-decoration: underline; }
+.partes-migrado { grid-column: auto; padding: 3px 0 0; }
+.partes-resultado { margin-top: 10px; padding: 8px 10px; border-radius: var(--radius-xs); background: var(--surface-2); display: flex; flex-direction: column; gap: 4px; font-size: 11px; }
+.partes-resultado-linha { overflow-wrap: anywhere; }
+.partes-resultado-ok { color: var(--incluido); }
+.partes-resultado-falhou { color: var(--excluido); }
+@media (max-width: 420px) {
+  .partes-grid { grid-template-columns: 1fr; }
+  .partes-campo-control { align-items: flex-start; flex-wrap: wrap; }
+}
+
+.lanc-filhos { display: flex; flex-direction: column; gap: 8px; padding-left: 14px; border-left: 2px dashed var(--border-2); margin: 8px 0; }
+
+.lanc-add-btn {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+  padding: 6px 0;
+}
+.lanc-add-btn:hover { text-decoration: underline; }
+
+.lanc-eyebrow { font-size: 10px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted-2); font-weight: 700; }
+
+.lanc-resultado { margin-top: 14px; border-top: 1px solid var(--border-2); padding-top: 10px; }
+.lanc-resultado-titulo { font-family: var(--font-display); font-weight: 600; font-size: 13px; margin-bottom: 6px; }
+.lanc-resultado-linha { display: flex; gap: 6px; align-items: flex-start; font-size: 11.5px; padding: 4px 0; }
+.lanc-resultado-tag { font-weight: 700; }
+.lanc-resultado-ok .lanc-resultado-tag { color: var(--incluido); }
+.lanc-resultado-falhou .lanc-resultado-tag { color: var(--excluido); }
