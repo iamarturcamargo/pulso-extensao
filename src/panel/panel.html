@@ -190,8 +190,11 @@
 
 
       <div class="topbar-entrada" id="topbarEntrada">
-        <button type="button" id="btnConferir">Conferir processo aberto</button>
-        <span class="actions-sep">ou puxe por número:</span>
+        
+
+
+
+        <span class="actions-sep">Número do processo:</span>
         <input type="text" id="inputNumeroPuxar" class="input-numero"
                placeholder="0000000-00.0000.0.00.0000" autocomplete="off"
                spellcheck="false" maxlength="25" />
@@ -211,6 +214,7 @@
 
 
         <div id="avisoEscopo" class="aviso" hidden></div>
+        <div id="avisoLotacao" class="aviso" hidden></div>
         <div id="avisoGuiaPendente" class="aviso" hidden></div>
 
         
@@ -229,9 +233,9 @@
             <div class="inicial-vazio" id="telaInicialVazio" hidden>
               <div class="inicial-vazio-icone" aria-hidden="true">◷</div>
               <div class="inicial-vazio-titulo">Nenhuma conferência ainda</div>
-              <p class="inicial-vazio-txt">Abra um processo no SEEU e use
-                <b>Conferir processo aberto</b>, aí em cima — ou digite o número
-                e clique em <b>Puxar</b>, sem sair de onde você está.
+              <p class="inicial-vazio-txt">Digite o número do processo aí em cima
+                e clique em <b>Puxar</b>, sem sair de onde você está — basta ter
+                uma aba parada na tela inicial do SEEU.
                 As conferências ficam guardadas aqui.</p>
             </div>
           </div>
