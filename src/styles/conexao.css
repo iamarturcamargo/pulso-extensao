@@ -49,6 +49,20 @@
   background: var(--accent-tint);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .conexao-bolinha {
   width: 8px;
   height: 8px;
@@ -56,11 +70,16 @@
   flex: 0 0 auto;
   background: var(--muted-2);
 }
-.conexao-bolinha.on { background: var(--incluido); }
-.conexao-bolinha.off { background: var(--excluido); }
-.conexao-bolinha.aviso { background: var(--alterado); }
-.conexao-bolinha.indefinido { background: var(--muted-2); }
-.conexao-bolinha.verificando {
+.conexao-bolinha--on { background: var(--incluido); }
+.conexao-bolinha--off { background: var(--excluido); }
+
+
+
+
+
+.conexao-bolinha--aviso { background: var(--accent); }
+.conexao-bolinha--indefinido { background: var(--muted-2); }
+.conexao-bolinha--verificando {
   background: var(--muted-2);
   animation: conexaoPulso 1.4s ease-in-out infinite;
 }
@@ -72,7 +91,7 @@
 
 
 @media (prefers-reduced-motion: reduce) {
-  .conexao-bolinha.verificando { animation: none; }
+  .conexao-bolinha--verificando { animation: none; }
 }
 
 .conexao-texto {

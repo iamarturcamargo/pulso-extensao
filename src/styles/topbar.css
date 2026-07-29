@@ -41,6 +41,11 @@
   border-radius: 999px;
   white-space: nowrap;
 }
+
+
+
+
+.tabBtn[hidden] { display: none; }
 .tabBtn:hover { color: var(--accent); background: var(--accent-tint); }
 .tabBtn.active { color: #fff; background: var(--accent); }
 

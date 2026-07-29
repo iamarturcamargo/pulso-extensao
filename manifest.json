@@ -7,7 +7,7 @@
     "48": "assets/icons/icon-48.png",
     "128": "assets/icons/icon-128.png"
   },
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Conferência de processos migrados do SAJ para o SEEU: extrai os dados migrados, permite corrigir/excluir/incluir na conferência e exporta relatório do dia.",
   "permissions": ["activeTab", "scripting", "sidePanel", "storage"],
   "host_permissions": [
