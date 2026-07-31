@@ -2,7 +2,7 @@
 
 Pulso — conferência de processos migrados do SAJ para o SEEU.
 
-Versão distribuída: 0.7.0
+Versão distribuída: 0.7.1
 
 ## Como instalar
 

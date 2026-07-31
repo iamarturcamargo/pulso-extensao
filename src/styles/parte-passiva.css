@@ -86,13 +86,21 @@
 .lanc-resultado-falhou .lanc-resultado-tag { color: var(--excluido); }
 
  
-.partes-enderecos-barra { display: flex; justify-content: flex-end; gap: 10px; margin: -2px 0 2px; }
-.partes-btn-linha {
-  background: none; border: 0; padding: 2px 4px; cursor: pointer;
-  font: inherit; font-size: 11px; color: var(--accent); border-radius: var(--radius-xs);
+.partes-enderecos-barra { display: flex; justify-content: flex-end; gap: 6px; margin: 6px 0 2px; }
+
+
+
+
+
+
+
+.partes-add-btn {
+  color: var(--accent); border-color: rgba(var(--accent-rgb), .3); background: var(--accent-tint);
 }
-.partes-btn-linha:hover:not(:disabled) { text-decoration: underline; }
-.partes-btn-linha:disabled { color: var(--muted-2); cursor: default; }
+.partes-add-btn:hover:not(:disabled) { border-color: var(--accent); background: var(--accent); color: #fff; }
+.partes-add-btn:disabled {
+  color: var(--muted-2); border-color: var(--border); background: var(--surface); cursor: default;
+}
 
 
 .partes-tip { position: relative; display: inline-flex; }

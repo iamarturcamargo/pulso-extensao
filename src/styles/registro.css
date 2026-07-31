@@ -61,6 +61,12 @@
 
 .item-body { padding: 2px 10px 10px; }
 
+
+
+
+.item-card-sem-cabecalho { border: 0; background: none; }
+.item-card-sem-cabecalho > .item-body { padding: 0; }
+
 .grupos-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
 @media (min-width: 560px) {
   .grupos-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
