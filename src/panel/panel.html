@@ -132,7 +132,10 @@
 
 
 
-
+            <label class="opcoes-check">
+              <input type="checkbox" id="optExperimentalEventos" />
+              <span>Sincronizar Eventos com o SEEU</span>
+            </label>
           </div>
         </div>
       </div>
@@ -391,6 +394,87 @@
     </div>
   </div>
 
+  
+
+  <div class="evc-modal-overlay" id="evcOverlay" hidden>
+    <div class="evc-modal-scrim" id="evcScrim"></div>
+    <div class="evc-modal-card" role="dialog" aria-modal="true" aria-labelledby="evcModalTitulo">
+      <div class="evc-modal-header">
+        <div class="evc-modal-header-text">
+          <h2 class="evc-modal-titulo" id="evcModalTitulo">Eventos — visão completa</h2>
+        </div>
+        
+
+        <div class="evc-modal-header-acoes">
+          <button type="button" class="item-btn" id="evcConfigBtn" aria-label="Opções de exibição">⚙</button>
+          <div class="evc-config-menu" id="evcConfigMenu" hidden>
+            <label class="evc-config-item">
+              <input type="checkbox" id="evcOptDiffDias" checked />
+              Mostrar diferença de dias
+            </label>
+            
+
+            <label class="evc-config-item evc-config-item-sub">
+              <input type="checkbox" id="evcOptDiffAnoMesDia" />
+              Mostrar em anos, meses e dias
+            </label>
+            <label class="evc-config-item">
+              <input type="checkbox" id="evcOptHoje" checked />
+              Mostrar hoje
+            </label>
+            <div class="evc-config-divisor"></div>
+            <div class="evc-config-titulo">Info extra na coluna do processo</div>
+            <label class="evc-config-item">
+              
+
+
+
+
+              <input type="radio" name="evcInfoProc" value="fato" checked />
+              Data do fato
+            </label>
+            <label class="evc-config-item">
+              <input type="radio" name="evcInfoProc" value="pena" />
+              Pena total ativa
+            </label>
+            <label class="evc-config-item">
+              <input type="radio" name="evcInfoProc" value="nenhuma" />
+              Nada
+            </label>
+            <div class="evc-config-divisor"></div>
+            <label class="evc-config-item">
+              <input type="checkbox" id="evcOptCompacto" checked />
+              Exibição compacta ao rolar
+            </label>
+            <div class="evc-config-divisor"></div>
+            <label class="evc-config-item">
+              <input type="checkbox" id="evcOptObsSempreVisivel" />
+              Observação sempre visível
+            </label>
+          </div>
+          <button type="button" class="item-btn" id="evcFechar" aria-label="Fechar">✕</button>
+        </div>
+      </div>
+      <div class="evc-modal-body">
+        
+
+        <div class="evc-grid-wrap" id="evcGridWrap">
+          <svg class="evc-svg" id="evcSvg"></svg>
+          <div class="evc-grid" id="evcGrid"></div>
+          <div class="evc-diff-tooltip" id="evcDiffTooltip" hidden></div>
+        </div>
+      </div>
+      <div class="evc-modal-footer">
+        <div class="evc-legend">
+          <span class="evc-legend-item"><span class="evc-legend-dot evc-legend-dot-filled"></span>Início (prisão)</span>
+          <span class="evc-legend-item"><span class="evc-legend-dot evc-legend-dot-open"></span>Interrupção (soltura)</span>
+          <span class="evc-legend-item"><span class="evc-legend-line evc-legend-line-solid"></span>Pena sendo computada</span>
+          <span class="evc-legend-item"><span class="evc-legend-line evc-legend-line-dotted"></span>Pena não sendo computada</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="toast" id="toast" hidden></div>
 
   
@@ -428,6 +512,9 @@
   <script src="../data/cidadesCache.js"></script>
   <script src="../editors/combobox.js"></script>
   <script src="../editors/eventos.js"></script>
+  
+
+  <script src="../editors/eventosGrade.js"></script>
   <script src="../editors/lancamento.js"></script>
   <script src="../editors/partePassiva.js"></script>
   
