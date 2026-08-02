@@ -430,16 +430,21 @@
 
 
 
-              <input type="radio" name="evcInfoProc" value="fato" checked />
+              <input type="checkbox" id="evcOptInfoFato" checked />
               Data do fato
             </label>
             <label class="evc-config-item">
-              <input type="radio" name="evcInfoProc" value="pena" />
+              <input type="checkbox" id="evcOptInfoPena" />
               Pena total ativa
             </label>
+            <div class="evc-config-divisor"></div>
             <label class="evc-config-item">
-              <input type="radio" name="evcInfoProc" value="nenhuma" />
-              Nada
+              <input type="checkbox" id="evcOptColunaFixa" checked />
+              Coluna de eventos fixa
+            </label>
+            <label class="evc-config-item evc-config-item-sub">
+              <input type="checkbox" id="evcOptCompactoHorizontal" />
+              Exibição compacta na rolagem horizontal
             </label>
             <div class="evc-config-divisor"></div>
             <label class="evc-config-item">
@@ -450,6 +455,22 @@
             <label class="evc-config-item">
               <input type="checkbox" id="evcOptObsSempreVisivel" />
               Observação sempre visível
+            </label>
+            <div class="evc-config-divisor"></div>
+            
+
+
+
+
+            <label class="evc-config-item evc-config-item-select">
+              Processos por evento
+              <select id="evcOptMaxVinculos">
+                <option value="2" selected>2</option>
+                <option value="3">3</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="0">Todos</option>
+              </select>
             </label>
           </div>
           <button type="button" class="item-btn" id="evcFechar" aria-label="Fechar">✕</button>

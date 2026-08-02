@@ -67,7 +67,7 @@
 
 
 
-.evc-vinculos-row { margin-top: 4px; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.evc-vinculos-row { margin-top: 4px; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; transition: opacity .15s ease, max-height .15s ease; }
 
 
 
@@ -107,6 +107,16 @@
   color: var(--accent); background: var(--accent-tint); border: 1px solid rgba(var(--accent-rgb), .3);
 }
 .evc-pill-add:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+
+
+
+.evc-pill-mais {
+  display: inline-flex; align-items: center; padding: 3px 10px;
+  border-radius: 999px; background: var(--surface-2); border: 1px solid var(--border-2);
+  font-size: 10.5px; font-weight: 600; color: var(--muted-2); white-space: nowrap; flex-shrink: 0;
+}
+.evc-pill-mais:hover { border-color: var(--border); color: var(--text); }
 .evc-combo-processo .evc-combo-input {
   border: 1px solid var(--border); border-radius: 999px; padding: 4px 10px; font-size: 11px;
   background: #fff; min-width: 230px;
@@ -228,9 +238,26 @@
 
 .evc-col-header-eventos, .evc-col-header { position: sticky; top: 0; background: var(--surface); z-index: 2; }
 .evc-col-header-eventos {
-  padding: 10px 14px; font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
-  color: var(--muted-2); display: flex; align-items: center; border-bottom: 1px solid var(--border-2);
+  padding: 10px 10px; font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--muted-2); display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  border-bottom: 1px solid var(--border-2);
 }
+
+
+
+
+
+.evc-col-header-eventos-rotulo { white-space: nowrap; flex: 0 0 auto; }
+
+
+
+
+
+
+
+
+
+.evc-grade-acoes { display: flex; gap: 6px; text-transform: none; letter-spacing: normal; flex: 0 1 auto; min-width: 0; }
 
 
 
@@ -242,6 +269,11 @@
 
 
 .evc-col-header-info { font-size: 10px; color: var(--muted); margin-top: 2px; transition: opacity .15s ease, max-height .15s ease; overflow: hidden; }
+
+
+
+
+.evc-col-header-info-linha + .evc-col-header-info-linha { margin-top: 1px; }
 
 
 
@@ -307,6 +339,15 @@
 
 
 
+
+.evc-config-item-select { justify-content: space-between; cursor: default; }
+.evc-config-item-select select {
+  font: inherit; font-size: 11px; color: var(--text); background: var(--surface-2);
+  border: 1px solid var(--border-2); border-radius: 6px; padding: 3px 6px; cursor: pointer;
+}
+
+
+
 .evc-diff-tooltip {
   position: absolute; top: 0; left: 0; z-index: 40; pointer-events: none;
   transform: translate(-50%, -135%);
@@ -324,6 +365,90 @@
 }
 .evc-hoje-label { font-size: 9.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
 .evc-hoje-data { font-family: var(--font-display); font-weight: 600; font-variant-numeric: tabular-nums; font-style: normal; }
+
+
+
+
+
+
+
+
+
+
+
+.evc-grid-coluna-fixa .evc-col-fixa-fundo,
+.evc-grid-coluna-fixa .evc-evento-card,
+.evc-grid-coluna-fixa .evc-hoje-row,
+.evc-grid-coluna-fixa .evc-col-header-eventos { position: sticky; left: 21px; }
+
+
+
+
+
+.evc-grid-coluna-fixa .evc-col-fixa-fundo { background: var(--surface); z-index: 1; }
+.evc-grid-coluna-fixa .evc-evento-card,
+.evc-grid-coluna-fixa .evc-hoje-row { z-index: 2; }
+
+
+
+
+
+
+
+.evc-grid-coluna-fixa .evc-evento-card:focus-within { z-index: 6; }
+
+
+
+
+.evc-grid-coluna-fixa .evc-col-header-eventos { z-index: 4; }
+
+
+
+
+
+.evc-grid-coluna-fixa .evc-col-header { z-index: 3; }
+
+
+
+.evc-col-fixa-fundo { display: none; }
+.evc-grid-coluna-fixa .evc-col-fixa-fundo { display: block; }
+
+
+
+.evc-grid-rolado-h .evc-col-fixa-fundo { box-shadow: 8px 0 12px -10px rgba(35,39,45,.35); }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.evc-col-fixa-mascara { display: none; }
+.evc-grid-coluna-fixa .evc-col-fixa-mascara {
+  display: block; position: sticky; left: 0; z-index: 5;
+  width: 21px; margin-left: -21px; justify-self: start;
+  background: var(--bg);
+}
+
+
+
+
+
+
+
+
+
+
+.evc-grid-rolado-h .evc-vinculos-row { max-height: 0; opacity: 0; overflow: hidden; margin-top: 0; margin-bottom: 3px; }
 
 
 
