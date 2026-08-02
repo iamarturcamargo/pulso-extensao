@@ -22,6 +22,8 @@
   <link rel="stylesheet" href="../styles/conexao.css" />
   <link rel="stylesheet" href="../styles/erros.css" />
   <link rel="stylesheet" href="../styles/guias.css" />
+  <link rel="stylesheet" href="../styles/notas.css" />
+  <link rel="stylesheet" href="../styles/progresso.css" />
 </head>
 <body>
 
@@ -33,6 +35,22 @@
       <button type="button" id="tabConferidos" class="tabBtn" data-global-action="true">Painel de Conferidos</button>
       <button type="button" id="tabErros" class="tabBtn" data-global-action="true">Erros</button>
       <button type="button" id="tabGuias" class="tabBtn" data-global-action="true">Guias</button>
+      
+
+
+
+      <button type="button" class="tabBtn appbar-notas" id="btnMinhasNotas"
+              title="Nota pessoal, sem vínculo com processo nenhum">
+        <svg class="notas-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
+             aria-hidden="true" focusable="false">
+          <path d="M6 3h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"></path>
+          <path d="M15 3v5h5"></path>
+          <path d="M8 12h8"></path>
+          <path d="M8 16h5"></path>
+        </svg>
+        Minhas notas
+      </button>
     </nav>
 
     
@@ -106,6 +124,29 @@
           <label class="opcoes-check">
             <input type="checkbox" id="optPainelErros" />
             <span>Mostrar painel de erros</span>
+          </label>
+        </div>
+
+        <div class="opcoes-grupo">
+          <label class="opcoes-check">
+            <input type="checkbox" id="optBotoesSempre" />
+            <span>Botões sempre visíveis</span>
+          </label>
+          <div class="opcoes-sub" id="opcoesBotoesSub" hidden>
+            <label class="opcoes-check">
+              <input type="checkbox" id="optBotoesSempreSecoes" />
+              <span>Aplicar também dentro das seções</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="opcoes-grupo">
+          
+
+
+          <label class="opcoes-check">
+            <input type="checkbox" id="optMinhasNotas" />
+            <span>Mostrar "Minhas notas" na barra do topo</span>
           </label>
         </div>
 
@@ -283,6 +324,18 @@
                   <span class="progress-label" id="progressLabel">0 / 0 vistos</span>
                 </div>
                 <button type="button" class="btn-ghost" id="btnExpandAll">⤢ Expandir tudo</button>
+                <button type="button" class="btn-ghost" id="btnNotasConferencia"
+                        data-global-action="true" disabled>
+                  <svg class="notas-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                       stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
+                       aria-hidden="true" focusable="false">
+                    <path d="M6 3h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"></path>
+                    <path d="M15 3v5h5"></path>
+                    <path d="M8 12h8"></path>
+                    <path d="M8 16h5"></path>
+                  </svg>
+                  Notas desta conferência
+                </button>
                 <button type="button" class="btn-trilho" id="btnTrilho">▶ Conferir em sequência</button>
                 <button type="button" class="btn-trilho btn-trilho-alt" id="btnTrilhoGrupo">⏩ Por grupo</button>
                 <span class="versao-chip" id="versaoChip">—</span>
@@ -305,6 +358,17 @@
           <button type="button" id="btnBaixarCsv">Baixar relatório (Excel)</button>
           <button type="button" id="btnBaixarTudo">Baixar todos os dados</button>
           <button type="button" id="btnLimparRelatorio" class="dangerBtn">Limpar relatório</button>
+          <div class="notas-busca-wrap">
+            <span class="notas-busca-icone" aria-hidden="true">
+            <svg class="notas-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+              <circle cx="11" cy="11" r="7"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </span>
+            <input type="search" id="buscaConferidos" class="notas-busca-input" autocomplete="off"
+                   placeholder="Buscar por processo, ambiente ou nota…" />
+          </div>
         </div>
         <div id="conferidosRoot"></div>
       </section>
@@ -329,6 +393,19 @@
 
 
       <section id="viewGuias" hidden>
+        <div class="actions">
+          <div class="notas-busca-wrap">
+            <span class="notas-busca-icone" aria-hidden="true">
+            <svg class="notas-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+              <circle cx="11" cy="11" r="7"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </span>
+            <input type="search" id="buscaGuias" class="notas-busca-input" autocomplete="off"
+                   placeholder="Buscar por nome, documento, processo ou nota…" />
+          </div>
+        </div>
         <div id="guiasRoot"></div>
       </section>
 
@@ -556,6 +633,18 @@
 
 
   <script src="aviso.js"></script>
+  
+
+
+
+
+  <script src="../model/notas.js"></script>
+  <script src="painelNotas.js"></script>
+  
+
+
+
+  <script src="progresso.js"></script>
   <script src="opcoes.js"></script>
   
 

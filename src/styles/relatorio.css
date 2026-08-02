@@ -176,20 +176,56 @@ button#btnPuxar:disabled { background: var(--border); color: var(--muted-2); cur
   min-width: 18px;
   text-align: center;
 }
+
+
+
+
+.secao-acoes {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  flex: 0 0 auto;
+  
+
+
+  min-height: 30px;
+}
+.secao-icone { width: 13px; height: 13px; flex: 0 0 auto; }
+
+
+
+.secao-acoes .item-btn-cascata { gap: 5px; }
+.secao-acoes .lanc-btn-sync-secao { display: inline-flex; align-items: center; gap: 6px; }
+.secao-btn-especial { color: var(--accent); border-color: rgba(var(--accent-rgb), .28); }
+.secao-btn-especial:hover { color: #fff; background: var(--accent); border-color: var(--accent); }
+
 .secao-hover-actions, .item-hover-actions, .grupo-hover-actions {
   margin-left: auto;
   opacity: 0;
   pointer-events: none;
   transition: opacity .12s ease;
   display: flex;
+  align-items: center;
   gap: 3px;
 }
+
+
+.secao-acoes .secao-hover-actions { margin-left: 0; }
 .secao-header:hover .secao-hover-actions,
 .secao-header:focus-within .secao-hover-actions,
 .item-header:hover .item-hover-actions,
 .item-header:focus-within .item-hover-actions,
 .grupo-header:hover .grupo-hover-actions,
 .grupo-header:focus-within .grupo-hover-actions { opacity: 1; pointer-events: auto; }
+
+
+
+
+
+body.botoes-sempre .secao-hover-actions,
+body.botoes-sempre-secoes .item-hover-actions,
+body.botoes-sempre-secoes .grupo-hover-actions { opacity: 1; pointer-events: auto; }
 
 .secao-body { padding: 4px 14px 12px; }
 .itens-list { display: flex; flex-direction: column; gap: 8px; }
