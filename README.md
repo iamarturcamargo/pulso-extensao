@@ -2,7 +2,7 @@
 
 Pulso — conferência de processos migrados do SAJ para o SEEU.
 
-Versão distribuída: 0.9.2
+Versão distribuída: 0.10.0
 
 ## Como instalar
 
@@ -16,6 +16,11 @@ Versão distribuída: 0.9.2
 6. Selecione a pasta que você descompactou no passo 2 — a que contém o arquivo `manifest.json` (não a pasta que contém o `.zip`, e sim a pasta já descompactada).
 
 Pronto. O ícone do Pulso aparece na barra de extensões do Chrome.
+
+> Depois de instalada, não mova nem renomeie essa pasta. É o endereço dela
+> que identifica a extensão no navegador e mantém as conferências
+> acessíveis — mudá-la de lugar equivale a instalar uma extensão nova, em
+> branco.
 
 ## Responsabilidade pelos dados
 

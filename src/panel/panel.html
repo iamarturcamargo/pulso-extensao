@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="../styles/guias.css" />
   <link rel="stylesheet" href="../styles/notas.css" />
   <link rel="stylesheet" href="../styles/progresso.css" />
+  <link rel="stylesheet" href="../styles/bnmp.css" />
 </head>
 <body>
 
@@ -168,7 +169,6 @@
             
 
 
-
             <label class="opcoes-check">
               <input type="checkbox" id="optExperimentalPartes" />
               <span>Sincronizar Partes com o SEEU</span>
@@ -185,6 +185,10 @@
             <label class="opcoes-check">
               <input type="checkbox" id="optExperimentalEventos" />
               <span>Sincronizar Eventos com o SEEU</span>
+            </label>
+            <label class="opcoes-check">
+              <input type="checkbox" id="optExperimentalBnmp" />
+              <span>Consultar BNMP</span>
             </label>
           </div>
         </div>
@@ -221,12 +225,22 @@
     </section>
 
     <section class="sidebar-bloco sidebar-bloco-nav" id="blocoNav">
-      <button type="button" class="sidebar-bloco-head" id="blocoNavHead" aria-expanded="true">
-        <span class="sidebar-chev" aria-hidden="true">▾</span>
-        <span class="sidebar-title">Navegação</span>
-      </button>
+      <div class="sidebar-bloco-head-row">
+        <button type="button" class="sidebar-bloco-head" id="blocoNavHead" aria-expanded="true">
+          <span class="sidebar-chev" aria-hidden="true">▾</span>
+          <span class="sidebar-title">Navegação</span>
+        </button>
+        <button type="button" class="sidebar-nav-tudo" id="sidebarNavTudo"
+                aria-label="Recolher todas as seções da navegação"
+                title="Recolher tudo"></button>
+      </div>
       <nav class="sidebar-nav sidebar-bloco-body" id="sidebarNav"></nav>
     </section>
+
+    <div class="sidebar-resize-handle" id="sidebarResizeHandle" role="separator"
+         aria-orientation="vertical" aria-label="Redimensionar painel lateral"
+         aria-valuemin="180" aria-valuemax="420" tabindex="0"
+         title="Arraste para redimensionar o painel"></div>
   </aside>
 
   <div class="main-wrapper" id="mainWrapper">
@@ -681,6 +695,14 @@
 
 
   <script src="painelGuias.js"></script>
+  
+
+
+
+
+  <script src="../bnmp/bnmpDados.js"></script>
+  <script src="../bnmp/bnmpApi.js"></script>
+  <script src="../bnmp/painelBnmp.js"></script>
   <script src="sidepanel.js"></script>
 </body>
 </html>

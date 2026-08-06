@@ -182,7 +182,7 @@
 
 .evc-modal-overlay { position: fixed; inset: 0; z-index: 190; display: flex; align-items: center; justify-content: center; padding: 20px; }
 .evc-modal-overlay[hidden] { display: none; }
-.evc-modal-scrim { position: absolute; inset: 0; background: rgba(35,39,45,.45); backdrop-filter: blur(3px); }
+.evc-modal-scrim { position: absolute; inset: 0; background: rgba(35,39,45,.45); }
 .evc-modal-card {
   position: relative; width: 100%; max-width: 1360px; height: min(90vh, 920px);
   background: var(--surface); border-radius: 18px;

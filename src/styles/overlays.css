@@ -27,7 +27,7 @@
 
 .aviso-overlay { position: fixed; inset: 0; z-index: 200; display: flex; align-items: center; justify-content: center; padding: 16px; }
 .aviso-overlay.hidden { display: none; }
-.aviso-scrim { position: absolute; inset: 0; background: rgba(35,39,45,.42); backdrop-filter: blur(3px); }
+.aviso-scrim { position: absolute; inset: 0; background: rgba(35,39,45,.42); }
 .aviso-card {
   position: relative;
   width: 100%;
@@ -65,7 +65,7 @@
  
 .trilho-overlay { position: fixed; inset: 0; z-index: 150; display: flex; align-items: center; justify-content: center; padding: 16px; }
 .trilho-overlay.hidden { display: none; }
-.trilho-scrim { position: absolute; inset: 0; background: rgba(245,246,248,.92); backdrop-filter: blur(6px); }
+.trilho-scrim { position: absolute; inset: 0; background: rgba(245,246,248,.92); }
 .trilho-card {
   position: relative;
   width: 100%;

@@ -23,6 +23,42 @@
   overflow: hidden;
 }
 #sidebar.collapsed .sidebar-bloco { display: none; }
+.sidebar-resize-handle {
+  position: fixed;
+  z-index: 61;
+  top: var(--appbar-h);
+  bottom: 0;
+  left: calc(var(--sidebar-width) - 3px);
+  width: 6px;
+  cursor: col-resize;
+  touch-action: none;
+}
+.sidebar-resize-handle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: transparent;
+  transform: translateX(-50%);
+  transition: background-color .12s ease, width .12s ease;
+}
+.sidebar-resize-handle:hover::before,
+.sidebar-resize-handle:focus-visible::before,
+body.sidebar-redimensionando .sidebar-resize-handle::before {
+  width: 2px;
+  background: var(--accent);
+}
+#sidebar.collapsed .sidebar-resize-handle { display: none; }
+body.sidebar-redimensionando {
+  cursor: col-resize;
+  user-select: none;
+}
+body.sidebar-redimensionando #sidebar,
+body.sidebar-redimensionando .main-wrapper {
+  transition: none;
+}
 .sidebar-toggle {
   position: sticky;
   top: 0;
@@ -61,6 +97,33 @@
   text-align: left;
 }
 .sidebar-bloco-head:hover { background: var(--accent-tint); }
+.sidebar-bloco-head-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.sidebar-bloco-head-row .sidebar-bloco-head {
+  flex: 1 1 auto;
+  width: auto;
+}
+.sidebar-nav-tudo {
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  color: var(--muted);
+}
+.sidebar-nav-tudo:hover {
+  background: var(--accent-tint);
+  color: var(--accent);
+}
+.sidebar-nav-tudo svg {
+  width: 14px;
+  height: 14px;
+}
 .sidebar-chev {
   flex: 0 0 auto;
   font-size: 10px;
@@ -94,6 +157,35 @@
 .sidebar-bloco-nav { flex: 1; min-height: 0; display: flex; flex-direction: column; }
 .sidebar-nav { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 4px; }
 .nav-secao { border-radius: var(--radius-xs); padding: 2px 4px; }
+.nav-secao-head {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+.nav-secao-toggle {
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  color: var(--muted);
+}
+.nav-secao-toggle:hover {
+  background: var(--accent-tint);
+  color: var(--accent);
+}
+.nav-secao-toggle svg {
+  width: 10px;
+  height: 10px;
+  transition: transform .15s ease;
+}
+.nav-secao-toggle[aria-expanded="false"] svg { transform: rotate(-90deg); }
+.nav-secao-head .secao-link {
+  flex: 1 1 auto;
+  min-width: 0;
+}
 .secao-link {
   display: flex;
   align-items: center;
