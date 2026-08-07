@@ -75,12 +75,41 @@
     <div class="opcoes-wrap">
       <button type="button" class="btn-opcoes" id="btnOpcoes" data-global-action="true"
               title="Opções" aria-label="Opções" aria-expanded="false">⚙</button>
-      
+    </div>
+    
 
 
 
 
-      <div class="opcoes-menu" id="opcoesMenu" hidden>
+
+
+
+
+
+
+    <div class="opcoes-overlay" id="opcoesOverlay" hidden>
+      <div class="opcoes-scrim" id="opcoesScrim"></div>
+      <div class="opcoes-menu" id="opcoesMenu" role="dialog" aria-modal="true"
+           aria-labelledby="opcoesTitulo" tabindex="-1">
+        <div class="opcoes-header">
+          <span class="opcoes-titulo-modal" id="opcoesTitulo">Opções</span>
+          
+
+
+          <span class="opcoes-versao" id="opcoesVersao"></span>
+          
+
+
+
+
+          <span class="opcoes-atualizacao" id="opcoesAtualizacao" hidden>
+            <span id="opcoesAtualizacaoTexto"></span> —
+            <a id="opcoesAtualizacaoLink" href="#" target="_blank" rel="noopener noreferrer">ver no GitHub</a>
+          </span>
+          <button type="button" class="opcoes-fechar" id="opcoesFecharBtn"
+                  aria-label="Fechar">✕</button>
+        </div>
+        <div class="opcoes-body" id="opcoesBody">
         <div class="opcoes-grupo">
           <span class="opcoes-titulo">Onde o Pulso aparece</span>
           <label class="opcoes-linha">
@@ -154,6 +183,24 @@
           
 
 
+
+
+          <label class="opcoes-check">
+            <input type="checkbox" id="optCrimesCompacto" />
+            <span>Exibição compacta da lista de crimes</span>
+          </label>
+          <div class="opcoes-sub" id="opcoesCrimesSub" hidden>
+            <label class="opcoes-check">
+              <input type="checkbox" id="optCrimesUltimoUso" />
+              <span>Mostrar primeiro os últimos usados</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="opcoes-grupo">
+          
+
+
           <label class="opcoes-check">
             <input type="checkbox" id="optMinhasNotas" />
             <span>Mostrar "Minhas notas" na barra do topo</span>
@@ -190,7 +237,16 @@
               <input type="checkbox" id="optExperimentalBnmp" />
               <span>Consultar BNMP</span>
             </label>
+            
+
+            <div class="opcoes-sub" id="opcoesBnmpSub" hidden>
+              <label class="opcoes-check">
+                <input type="checkbox" id="optExperimentalBnmpParte" />
+                <span>Habilitar no cadastro de pessoa</span>
+              </label>
+            </div>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -453,6 +509,29 @@
   </div>
 
   
+
+
+
+
+
+
+
+
+  <div class="aviso-overlay hidden" id="portaoOverlay">
+    <div class="aviso-scrim" id="portaoScrim"></div>
+    <div class="aviso-card" id="portaoCard" role="alertdialog" aria-modal="true"
+         aria-labelledby="portaoTitulo" aria-describedby="portaoCorpo">
+      <div class="aviso-titulo" id="portaoTitulo">—</div>
+      <div class="aviso-corpo" id="portaoCorpo"></div>
+      <div class="aviso-actions">
+        <button type="button" class="aviso-btn" id="portaoCancelBtn">Cancelar</button>
+        <button type="button" class="aviso-btn" id="portaoVerificarBtn">Verificar agora</button>
+        <button type="button" class="aviso-btn aviso-btn-ok" id="portaoContinuarBtn" hidden>Continuar</button>
+      </div>
+    </div>
+  </div>
+
+  
   <div class="trilho-overlay hidden" id="trilhoOverlay">
     <div class="trilho-scrim" id="trilhoScrim"></div>
     <div class="trilho-card" role="dialog" aria-modal="true" aria-label="Conferência em sequência">
@@ -700,9 +779,19 @@
 
 
 
+
+
+
+
+
+
+
+
+
   <script src="../bnmp/bnmpDados.js"></script>
   <script src="../bnmp/bnmpApi.js"></script>
   <script src="../bnmp/painelBnmp.js"></script>
+  <script src="../bnmp/bnmpParte.js"></script>
   <script src="sidepanel.js"></script>
 </body>
 </html>
