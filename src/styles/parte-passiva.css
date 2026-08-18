@@ -58,6 +58,12 @@
 .partes-resultado-linha { overflow-wrap: anywhere; }
 .partes-resultado-ok { color: var(--incluido); }
 .partes-resultado-falhou { color: var(--excluido); }
+
+
+
+
+
+.partes-resultado-avisou { color: var(--alterado); }
 @media (max-width: 420px) {
   .partes-grid { grid-template-columns: 1fr; }
   

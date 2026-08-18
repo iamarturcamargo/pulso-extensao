@@ -5,6 +5,11 @@
 
 .item-header { display: flex; align-items: center; gap: 6px; padding: 8px 10px; }
 .item-title-wrap { min-width: 0; flex: 1 1 auto; }
+
+
+
+.item-acoes-lanc { display: flex; align-items: center; flex-wrap: wrap; justify-content: flex-end; gap: 6px; }
+.item-acoes-lanc:empty { display: none; }
 .item-title { font-family: var(--font-display); font-weight: 600; font-size: 12.5px; cursor: pointer; word-break: break-word; }
 .item-card-processo-criminal > .item-header .item-title,
 .item-card-processo-criminal > .item-header .item-title-input { font-size: 15px; }

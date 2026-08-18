@@ -12,16 +12,9 @@
   background: transparent;
   padding: 10px 0;
 }
-.lanc-voltar {
-  font-size: 11.5px;
-  font-weight: 600;
-  color: var(--muted);
-  padding: 6px 10px;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  background: var(--surface);
-}
-.lanc-voltar:hover { color: var(--accent); border-color: var(--accent); }
+
+
+
 .lanc-titulo { font-family: var(--font-display); font-weight: 600; font-size: 15px; flex: 1; min-width: 0; }
 .lanc-btn-sync, .lanc-btn-export {
   font-size: 11.5px;
@@ -47,6 +40,22 @@
 }
 .lanc-sync-lote-concluido .lanc-card,
 .lanc-sync-lote-concluido .lanc-grid { opacity: .72; }
+
+
+
+.lanc-aviso-remocao-total {
+  margin: -4px 0 12px;
+  padding: 8px 10px;
+  border-radius: var(--radius-xs);
+  border: 1px solid rgba(var(--excluido-rgb), .35);
+  color: var(--excluido);
+  background: var(--excluido-tint);
+  font-size: 11px;
+  font-weight: 600;
+}
+.lanc-removido-total .lanc-card,
+.lanc-removido-total .lanc-grid,
+.lanc-removido-total .lanc-add-btn { opacity: .5; }
 
 .lanc-card {
   background: var(--surface);
@@ -238,6 +247,20 @@
  
 .lanc-card-pena.lanc-pena-ativa { background: rgba(56, 161, 105, .08); box-shadow: inset 3px 0 0 #38a169; }
 .lanc-pena-ativa-badge { font-size: 10px; font-weight: 800; letter-spacing: .03em; color: #38a169; margin-left: 8px; cursor: help; }
+
+
+
+.lanc-pena-ativa-badge-incerta { color: var(--alterado); }
+
+
+
+.lanc-aviso-vigencia { color: var(--alterado); font-size: 11px; background: var(--alterado-tint); border-radius: var(--radius-xs); padding: 5px 8px; margin: 0 0 8px; }
+
+
+
+
+
+.lanc-resultado-avisou .lanc-resultado-tag { color: var(--alterado); }
  
 .lanc-derivado { background: var(--surface-2, rgba(127,127,127,.08)); color: var(--muted, var(--text)); cursor: default; display: flex; align-items: center; }
 
