@@ -29,11 +29,3 @@
 }
 .versaoBtn:hover { background: var(--accent-tint); }
 .versaoBtn:disabled { color: var(--muted-2); border-color: var(--border); cursor: not-allowed; }
-
- 
-@media (max-width: 480px) {
-  .trilho-card { padding: 16px 14px 14px; border-radius: 14px; }
-  .trilho-field-label { font-size: 15px; }
-  .trilho-actions { justify-content: center; }
-  .trilho-btn-next { margin-left: 0; width: 100%; text-align: center; }
-}

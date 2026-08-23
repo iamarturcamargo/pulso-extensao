@@ -138,18 +138,6 @@ body.sidebar-redimensionando .main-wrapper {
   font-size: 12px;
   color: var(--text);
 }
-.sidebar-stats { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
-.stat-badge {
-  font-size: 10px;
-  font-weight: 600;
-  padding: 2px 7px;
-  border-radius: 999px;
-  white-space: nowrap;
-}
-.stat-badge.alterado { color: var(--alterado); background: var(--alterado-tint); }
-.stat-badge.excluido { color: var(--excluido); background: var(--excluido-tint); }
-.stat-badge.incluido { color: var(--incluido); background: var(--incluido-tint); }
-.stat-badge.revisado { color: var(--revisado); background: var(--revisado-tint); }
 
 
 
@@ -205,7 +193,6 @@ body.sidebar-redimensionando .main-wrapper {
 .badge-sm.alterado, .badge-xs.alterado { color: var(--alterado); background: var(--alterado-tint); }
 .badge-sm.excluido, .badge-xs.excluido { color: var(--excluido); background: var(--excluido-tint); }
 .badge-sm.incluido, .badge-xs.incluido { color: var(--incluido); background: var(--incluido-tint); }
-.badge-sm.revisado, .badge-xs.revisado { color: var(--revisado); background: var(--revisado-tint); }
 .badge-sm.semDivergencia { color: var(--muted); background: var(--border-2); }
 
 .nav-itens { padding-left: 14px; display: flex; flex-direction: column; gap: 1px; margin-top: 1px; }

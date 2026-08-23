@@ -36,22 +36,6 @@
       <button type="button" id="tabConferidos" class="tabBtn" data-global-action="true">Painel de Conferidos</button>
       <button type="button" id="tabErros" class="tabBtn" data-global-action="true">Erros</button>
       <button type="button" id="tabGuias" class="tabBtn" data-global-action="true">Guias</button>
-      
-
-
-
-      <button type="button" class="tabBtn appbar-notas" id="btnMinhasNotas"
-              title="Nota pessoal, sem vínculo com processo nenhum">
-        <svg class="notas-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-             stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
-             aria-hidden="true" focusable="false">
-          <path d="M6 3h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"></path>
-          <path d="M15 3v5h5"></path>
-          <path d="M8 12h8"></path>
-          <path d="M8 16h5"></path>
-        </svg>
-        Minhas notas
-      </button>
     </nav>
 
     
@@ -68,6 +52,23 @@
       </button>
       <div class="conexao-menu" id="conexaoMenu" hidden></div>
     </div>
+    
+
+
+
+
+    <button type="button" class="tabBtn appbar-notas" id="btnMinhasNotas"
+            title="Nota pessoal, sem vínculo com processo nenhum">
+      <svg class="notas-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
+           aria-hidden="true" focusable="false">
+        <path d="M6 3h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"></path>
+        <path d="M15 3v5h5"></path>
+        <path d="M8 12h8"></path>
+        <path d="M8 16h5"></path>
+      </svg>
+      Minhas notas
+    </button>
     
 
 
@@ -245,6 +246,15 @@
               <input type="checkbox" id="optExperimentalEventos" />
               <span>Sincronizar Eventos com o SEEU</span>
             </label>
+            
+
+
+
+
+            <label class="opcoes-check">
+              <input type="checkbox" id="optExperimentalEventosCheckbox" />
+              <span>Eventos: marcar processos por caixa de seleção</span>
+            </label>
             <label class="opcoes-check">
               <input type="checkbox" id="optExperimentalBnmp" />
               <span>Consultar BNMP</span>
@@ -276,21 +286,6 @@
     <div class="sidebar-toggle">
       <button type="button" id="sidebarToggleBtn" title="Recolher painel">◀</button>
     </div>
-
-    <section class="sidebar-bloco" id="blocoResumo">
-      <button type="button" class="sidebar-bloco-head" id="blocoResumoHead" aria-expanded="true">
-        <span class="sidebar-chev" aria-hidden="true">▾</span>
-        <span class="sidebar-title">Resumo das alterações</span>
-      </button>
-      <div class="sidebar-bloco-body" id="blocoResumoBody">
-        <div class="sidebar-stats">
-          <span class="stat-badge alterado" id="sideAlterado">0 alterados</span>
-          <span class="stat-badge excluido" id="sideExcluido">0 excluídos</span>
-          <span class="stat-badge incluido" id="sideIncluido">0 incluídos</span>
-          <span class="stat-badge revisado" id="sideRevisado">0 vistos</span>
-        </div>
-      </div>
-    </section>
 
     <section class="sidebar-bloco sidebar-bloco-nav" id="blocoNav">
       <div class="sidebar-bloco-head-row">
@@ -329,13 +324,9 @@
 
 
 
-
-
         <div class="topbar-processo-acoes">
           <button type="button" class="btn-ghost btn-conferir-outro" id="btnConferirOutro"
                   aria-expanded="false">+ Conferir outro processo</button>
-          <button type="button" class="btn-ghost btn-pecas-toggle" id="btnMostrarPecas"
-                  aria-expanded="false">Mostrar peças</button>
         </div>
       </div>
 
@@ -407,13 +398,7 @@
 
 
             <div class="conteudo-tabs" id="conteudoTabs" hidden>
-              <span class="conteudo-tab active" id="tabMetadados">Metadados</span>
-
               <div class="conteudo-acoes">
-                <div class="progress-wrap">
-                  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
-                  <span class="progress-label" id="progressLabel">0 / 0 vistos</span>
-                </div>
                 <button type="button" class="btn-ghost" id="btnExpandAll">⤢ Expandir tudo</button>
                 <button type="button" class="btn-ghost" id="btnNotasConferencia"
                         data-global-action="true" disabled>
@@ -427,11 +412,11 @@
                   </svg>
                   Notas desta conferência
                 </button>
-                <button type="button" class="btn-trilho" id="btnTrilho">▶ Conferir em sequência</button>
-                <button type="button" class="btn-trilho btn-trilho-alt" id="btnTrilhoGrupo">⏩ Por grupo</button>
                 <span class="versao-chip" id="versaoChip">—</span>
                 <button type="button" class="btn-undo" id="btnUndo" data-global-action="true" disabled>↺ Desfazer</button>
                 <button type="button" class="btn-salvar" id="btnSalvar" data-global-action="true" disabled hidden>Salvar Versão</button>
+                <button type="button" class="btn-ghost btn-pecas-toggle" id="btnMostrarPecas"
+                        aria-expanded="false">Mostrar peças</button>
               </div>
             </div>
 
@@ -447,8 +432,7 @@
       <section id="viewConferidos" hidden>
         <div class="actions">
           <button type="button" id="btnBaixarCsv">Baixar relatório (Excel)</button>
-          <button type="button" id="btnBaixarTudo">Baixar todos os dados</button>
-          <button type="button" id="btnLimparRelatorio" class="dangerBtn">Limpar relatório</button>
+          <button type="button" id="btnLimparRelatorio" class="dangerBtn">Limpar</button>
           <div class="notas-busca-wrap">
             <span class="notas-busca-icone" aria-hidden="true">
             <svg class="notas-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -544,53 +528,15 @@
   </div>
 
   
-  <div class="trilho-overlay hidden" id="trilhoOverlay">
-    <div class="trilho-scrim" id="trilhoScrim"></div>
-    <div class="trilho-card" role="dialog" aria-modal="true" aria-label="Conferência em sequência">
-      <div class="trilho-top">
-        <div class="trilho-breadcrumb" id="trilhoBreadcrumb">—</div>
-        <div class="trilho-counter" id="trilhoCounter">0 / 0</div>
-      </div>
-      <div class="trilho-progress-track"><div class="trilho-progress-fill" id="trilhoProgressFill"></div></div>
-      <div class="trilho-body" id="trilhoBody">
-        
-        <div id="trilhoCampoView">
-          <div class="trilho-field-label" id="trilhoFieldLabel">—</div>
-          <div class="trilho-compare">
-            <div class="trilho-original">
-              <span class="trilho-mini-label">Migrado</span>
-              <div class="trilho-original-value" id="trilhoOriginalValue">—</div>
-            </div>
-            <div class="trilho-arrow" aria-hidden="true">→</div>
-            <div class="trilho-input-wrap">
-              <span class="trilho-mini-label">Valor atual</span>
-              <input type="text" id="trilhoInput" class="trilho-input" autocomplete="off" spellcheck="false">
-            </div>
-          </div>
-          <span class="trilho-state-chip" id="trilhoStateChip" data-state="igual">Igual ao migrado</span>
-        </div>
-        
 
-        <div id="trilhoGrupoView" hidden>
-          <div class="trilho-grupo-titulo" id="trilhoGrupoTitulo">—</div>
-          <div class="trilho-grupo-lista" id="trilhoGrupoLista"></div>
-        </div>
-      </div>
-      <div class="trilho-actions">
-        <button type="button" class="trilho-btn" id="trilhoBackBtn">← Voltar</button>
-        <button type="button" class="trilho-btn trilho-btn-restore" id="trilhoRestoreBtn">↩ Restaurar</button>
-        <button type="button" class="trilho-btn" id="trilhoExitBtn">Sair (Esc)</button>
-        <button type="button" class="trilho-btn trilho-btn-next" id="trilhoNextBtn">Confirmar e avançar (Enter) →</button>
-      </div>
-    </div>
-  </div>
 
-  
+
+
+
 
   <div class="evc-modal-overlay" id="evcOverlay" hidden>
-    <div class="evc-modal-scrim" id="evcScrim"></div>
-    <div class="evc-modal-card" role="dialog" aria-modal="true" aria-labelledby="evcModalTitulo">
-      <div class="evc-modal-header">
+    <div class="evc-modal-card" role="dialog" aria-labelledby="evcModalTitulo">
+      <div class="evc-modal-header" tabindex="0" aria-label="Mover janela — arraste ou use as setas">
         <div class="evc-modal-header-text">
           <h2 class="evc-modal-titulo" id="evcModalTitulo">Eventos — visão completa</h2>
         </div>
@@ -606,7 +552,7 @@
             
 
             <label class="evc-config-item evc-config-item-sub">
-              <input type="checkbox" id="evcOptDiffAnoMesDia" />
+              <input type="checkbox" id="evcOptDiffAnoMesDia" checked />
               Mostrar em anos, meses e dias
             </label>
             <label class="evc-config-item">
@@ -684,6 +630,9 @@
           <span class="evc-legend-item"><span class="evc-legend-line evc-legend-line-dotted"></span>Pena não sendo computada</span>
         </div>
       </div>
+      
+
+      <div class="evc-resize-handle" id="evcResizeHandle" tabindex="0" aria-label="Redimensionar janela — arraste ou use as setas"></div>
     </div>
   </div>
 
@@ -741,7 +690,6 @@
   
 
 
-
   <script src="dom.js"></script>
   
 
@@ -781,7 +729,6 @@
   <script src="formulario.js"></script>
   <script src="linksProcesso.js"></script>
   <script src="sidebar.js"></script>
-  <script src="trilho.js"></script>
   <script src="../export/csv.js"></script>
   
 
