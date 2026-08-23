@@ -32,6 +32,42 @@
   height: 72vh;
 }
 
+
+
+
+
+
+.pecas-painel.painel-flutuante-ativo {
+  position: fixed;
+  z-index: 182;  
+  height: auto;  
+  box-shadow: 0 20px 44px -16px rgba(20, 22, 26, .38);
+}
+.pecas-painel.painel-flutuante-ativo .pecas-toolbar { cursor: move; }
+.pecas-painel.painel-flutuante-ativo .pecas-toolbar button { cursor: pointer; }
+
+.painel-flutuante-resize {
+  display: none;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 18px;
+  height: 18px;
+  cursor: nwse-resize;
+  touch-action: none;
+}
+.pecas-painel.painel-flutuante-ativo .painel-flutuante-resize { display: block; }
+.painel-flutuante-resize::before {
+  content: '';
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--border-2);
+  border-bottom: 2px solid var(--border-2);
+}
+
 .pecas-toolbar {
   display: flex;
   align-items: center;
