@@ -97,6 +97,22 @@
   justify-content: center;
   font-size: 12px;
 }
+.painel-flutuante-acoes {
+  position: relative;
+  display: inline-flex;
+}
+.painel-popup-botao {
+  position: absolute;
+  z-index: 300;
+  right: 100%;
+  top: 0;
+  display: none;
+  font-size: 11px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.painel-flutuante-acoes:hover .painel-popup-botao,
+.painel-flutuante-acoes:focus-within .painel-popup-botao { display: inline-flex; }
  
 #btnOpcoesPecas[aria-expanded="true"] {
   background: var(--accent-tint);
