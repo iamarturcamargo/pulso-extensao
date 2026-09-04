@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pulso — Meus modelos</title>
+
+
+
+<link rel="stylesheet" href="../onboarding/onboarding.css" />
+<link rel="stylesheet" href="../styles/modelos.css" />
+<link rel="stylesheet" href="pastaModelos.css" />
+</head>
+<body>
+
+<div class="onb">
+
+  <header class="onb-head">
+    <div class="onb-logo"><img src="../../assets/icons/icon-128.png" alt="" /></div>
+    <div class="onb-marca">
+      Pulso
+      <small>Meus modelos — escolher a pasta</small>
+    </div>
+  </header>
+
+  <section class="card">
+    <span class="eyebrow">Meus modelos</span>
+    <h1>Escolher a pasta dos modelos</h1>
+    <p class="sub">Escolha a pasta onde você guarda os modelos (.pdf ou .docx) usados na conferência.
+      Esta tela existe porque o navegador só deixa escolher pasta numa aba de verdade, não dentro do painel lateral.
+      Depois de escolher, o painel do Pulso passa a enxergar os mesmos arquivos — pode fechar esta aba.</p>
+
+    <div class="pm-pasta-atual" id="pmPastaAtual">Nenhuma pasta escolhida.</div>
+
+    <div class="acoes acoes-pm">
+      <button type="button" class="btn-primario" id="pmEscolherBtn">Escolher pasta</button>
+    </div>
+
+    <div class="modelos-aviso" id="pmSemApi" hidden>
+      <p>Este navegador não permite escolher uma pasta, nem por aqui. Adicione os arquivos um a um pela tela
+        "Meus modelos", no painel do Pulso (botão "Adicionar arquivo").</p>
+    </div>
+
+    <div class="pm-erro" id="pmErro" hidden></div>
+
+    <div id="pmListaWrap" hidden>
+      <span class="opt-nome">Modelos encontrados na pasta</span>
+      <ul class="pm-lista" id="pmLista"></ul>
+    </div>
+
+    <div class="acoes">
+      <button type="button" class="btn-secundario" id="pmFecharBtn">Pronto, pode fechar esta aba</button>
+    </div>
+  </section>
+
+</div>
+
+<script src="modelosStore.js"></script>
+<script src="pastaModelos.js"></script>
+</body>
+</html>

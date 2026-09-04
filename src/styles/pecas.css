@@ -143,6 +143,11 @@
 }
 .pecas-opcoes-check { display: flex; align-items: center; gap: 8px; font-size: 11px; cursor: pointer; }
 
+
+
+.pecas-opcoes-modelo { display: flex; align-items: center; gap: 8px; font-size: 11px; margin-top: 2px; }
+.pecas-opcoes-modelo select { flex: 1; min-width: 0; font-size: 11px; }
+
  
 .pecas-ordem { display: flex; }
 .pecas-ordem-btn {

@@ -23,6 +23,8 @@
   <link rel="stylesheet" href="../styles/erros.css" />
   <link rel="stylesheet" href="../styles/guias.css" />
   <link rel="stylesheet" href="../styles/notas.css" />
+  <link rel="stylesheet" href="../styles/modelos.css" />
+  <link rel="stylesheet" href="../styles/dipolSap.css" />
   <link rel="stylesheet" href="../styles/progresso.css" />
   <link rel="stylesheet" href="../styles/bnmp.css" />
 </head>
@@ -68,6 +70,21 @@
         <path d="M8 16h5"></path>
       </svg>
       Minhas notas
+    </button>
+    
+
+
+
+    <button type="button" class="tabBtn appbar-notas" id="btnMeusModelos"
+            title="Modelos de instrução (.docx ou .pdf), da sua pasta ou guardados aqui">
+      <svg class="notas-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
+           aria-hidden="true" focusable="false">
+        <path d="M3 7a1 1 0 0 1 1-1h5l2 2h9a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"></path>
+        <path d="M8 13h8"></path>
+        <path d="M8 16h5"></path>
+      </svg>
+      Meus modelos
     </button>
     
 
@@ -218,6 +235,30 @@
             <input type="checkbox" id="optMinhasNotas" />
             <span>Mostrar "Minhas notas" na barra do topo</span>
           </label>
+        </div>
+
+        
+
+
+
+
+
+
+
+
+        <div class="opcoes-grupo">
+          <span class="opcoes-titulo">Modelos</span>
+          <div class="opcoes-linha">
+            <span>Pasta dos modelos</span>
+            <span class="opcoes-modelos-pasta" id="opcoesModelosPastaNome">nenhuma</span>
+          </div>
+          <div class="opcoes-modelos-acoes">
+            <button type="button" class="notas-btn" id="opcoesModelosEscolherBtn">Escolher pasta</button>
+            <button type="button" class="notas-btn" id="opcoesModelosNovaAbaBtn">Escolher em nova aba</button>
+          </div>
+          <div class="opcoes-sub" id="opcoesModelosSemApi" hidden>
+            <span class="muted">Este navegador não permite escolher pasta aqui dentro do painel — use o botão "Escolher em nova aba", acima.</span>
+          </div>
         </div>
 
         <div class="opcoes-grupo">
@@ -695,6 +736,12 @@
   
 
 
+
+
+  <script src="../core/carregarVendor.js"></script>
+  
+
+
   <script src="../core/pdfVisualizador.js"></script>
   
 
@@ -703,6 +750,19 @@
   <script src="../core/painelFlutuante.js"></script>
   
 
+  
+
+
+
+
+  <script src="../modelos/modelosStore.js"></script>
+  <script src="../modelos/modeloPdf.js"></script>
+  
+
+
+
+
+  <script src="../export/metadadosPdf.js"></script>
   <script src="../pecas/pecasScrape.js"></script>
   <script src="../pecas/pecas.js"></script>
   
@@ -710,6 +770,10 @@
 
   <script src="../dipol/dipolScrape.js"></script>
   <script src="../dipol/dipol.js"></script>
+  
+
+
+  <script src="../dipol/dipolSap.js"></script>
   
 
 
@@ -732,6 +796,10 @@
 
   <script src="../model/notas.js"></script>
   <script src="painelNotas.js"></script>
+  
+
+
+  <script src="../modelos/painelModelos.js"></script>
   
 
 
